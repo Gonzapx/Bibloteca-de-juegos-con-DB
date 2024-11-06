@@ -1,87 +1,129 @@
-/* General reset */
+/* Reset general */
 body, h1, h2, h3, p, ul, li, a {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Body styling */
+/* Fondo de pantalla completo con imagen */
 body {
     font-family: 'Arial', sans-serif;
-    background-color: #f4f4f4; /* Fondo claro */
-    color: #333; /* Texto oscuro */
+    background: url('../static/imagen.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: #f4f4f4; /* Texto claro */
     line-height: 1.6;
-}
-
-/* Header styling */
-h1 {
-    background-color: #2c3e50; /* Fondo oscuro */
-    color: #ecf0f1; /* Texto claro */
-    text-align: center;
     padding: 20px;
-    margin-bottom: 20px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-/* Link styling */
+/* Estilo del encabezado */
+h1 {
+    background: rgba(44, 62, 80, 0.8); /* Fondo semi-transparente */
+    color: #e1ff00; /* Color amarillo vibrante */
+    text-align: center;
+    padding: 25px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    font-size: 2.5em;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-shadow: 2px 2px #000;
+}
+
+/* Estilo de enlaces */
 a {
-    color: #3498db; /* Color primario */
+    color: #ff9f00;
     text-decoration: none;
-    font-size: 1.2em;
+    font-size: 1.3em;
     margin: 10px;
     display: inline-block;
-    transition: color 0.3s, text-decoration 0.3s;
+    transition: color 0.3s ease, transform 0.3s ease;
+    font-weight: bold;
 }
 
 a:hover {
-    color: #e74c3c; /* Color vibrante para hover */
+    color: #e1ff00;
+    transform: scale(1.1); /* Efecto de escala */
+    text-shadow: 2px 2px #000;
     text-decoration: underline;
 }
 
-/* Table styling */
+/* Estilo de tabla */
 table {
     width: 100%;
     border-collapse: collapse;
     margin: 20px 0;
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.7);
+    color: #f4f4f4;
 }
 
 th, td {
-    border: 1px solid #ccc; /* Borde claro */
-    padding: 12px;
+    border: 1px solid #555;
+    padding: 15px;
     text-align: left;
 }
 
 th {
-    background-color: #2980b9; /* Color para el encabezado */
-    color: #fff; /* Texto blanco en encabezado */
+    background-color: #2980b9;
+    color: #fff;
+    font-weight: bold;
+    font-size: 1.2em;
 }
 
-/* Row hover effect */
+tr:nth-child(even) {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
 tr:hover {
-    background-color: #ecf0f1; /* Fondo claro en hover */
+    background-color: rgba(44, 62, 80, 0.8);
 }
 
-/* Action links in table */
+/* Estilo de enlaces en la tabla */
 td a {
-    color: #3498db; /* Color primario */
+    color: #e1ff00;
     margin-right: 10px;
+    transition: color 0.3s;
 }
 
 td a:hover {
-    color: #e74c3c; /* Color vibrante para hover */
+    color: #ff9f00;
+    font-weight: bold;
 }
 
-/* Responsive design */
+/* Animación de fondo para el header */
+@keyframes header-glow {
+    0%, 100% { box-shadow: 0 0 15px #e1ff00; }
+    50% { box-shadow: 0 0 25px #ff9f00; }
+}
+
+h1 {
+    animation: header-glow 2s infinite alternate;
+}
+
+/* Diseño responsivo */
 @media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+    
     h1 {
-        font-size: 2em; /* Ajustar el tamaño del título en móviles */
+        font-size: 1.8em;
+        padding: 20px;
     }
 
     a {
-        font-size: 1em; /* Ajustar el tamaño de los enlaces en móviles */
+        font-size: 1em;
     }
 
     table {
-        font-size: 0.9em; /* Ajustar el tamaño de la tabla en móviles */
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 10px;
     }
 }
+

@@ -3,21 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/edit.css">
     <title>Editar Juego</title>
 </head>
 <body>
-    <h1>Editar Juego</h1>
-    <form method="POST">
-        <label for="title">Título:</label>
-        <input type="text" name="title" value="{{ game.title }}" required><br>
-        <label for="genre">Género:</label>
-        <input type="text" name="genre" value="{{ game.genre }}" required><br>
-        <label for="release_year">Año de Lanzamiento:</label>
-        <input type="number" name="release_year" value="{{ game.release_year }}" required><br>
-        <input type="submit" value="Actualizar">
-    </form>
-    <a href="{{ url_for('index') }}">Volver a la lista</a>
+    <div class="form-container">
+        <h1>Editar Juego</h1>
+        <form method="POST">
+            <label for="title">Título:</label>
+            <input type="text" name="title" value="{{ game.title }}" required>
+            
+            <label for="genre">Género:</label>
+            <input type="text" name="genre" value="{{ game.genre }}" required>
+            
+            <label for="release_year">Año de Lanzamiento:</label>
+            <input type="number" name="release_year" value="{{ game.release_year }}" required>
+            
+            <input type="submit" value="Actualizar" class="submit-button">
+        </form>
+        <a href="{{ url_for('index') }}" class="back-link">Volver a la lista</a>
+    </div>
 </body>
 </html>
 
-</html>
