@@ -69,7 +69,7 @@ def main():
             break
         else:
             print("Opción no válida. Intente de nuevo.")
-
+            
     cursor.close()
     db.close()
 
